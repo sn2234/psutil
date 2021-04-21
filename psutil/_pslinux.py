@@ -1393,8 +1393,7 @@ def sensors_battery():
                 return int(ret) if ret.isdigit() else ret
         return None
 
-    bats = [x for x in os.listdir(POWER_SUPPLY_PATH) if x.startswith('BAT') or
-            'battery' in x.lower()]
+    bats = [x for x in os.listdir(POWER_SUPPLY_PATH)]
     if not bats:
         return None
     # Get the first available battery. Usually this is "BAT0", except
